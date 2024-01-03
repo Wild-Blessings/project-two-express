@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wild-Blessing Yegotti - clock</title>
+<link rel ="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- clock @Blessingnyce twitter I lift and code gymcode
+I love kanye west 
+GIT HUB https://github.com/Wild-Blessings
+GRACE AND MERCY IS MY LOGO --> 
+<!--     https://github.com/Wild-Blessings
+twitter @wild_blessings --> 
+
+<div class="container">
+  <span id="hours">00</span>
+       <span>:</span> 
+           <span id="minutes">00</span>
+     <span>:</span>
+         <span id="seconds">00</span>
+<span id="session">AM</span>
+    <p id="greetings"> </p>
+ <p id="demo"> weekday will appear here </p>   
+</div>
+
+
+    <style>
+
+       body{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0%;
+    padding: 0%;
+    /* background-image:url(/img/yeg.JPG); */
+   
+ 
+}
+
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:70px;
+   
+}
+
+.container p {
+color: none;
+} 
+    </style>
+  <script>
+
+function displayTime(){
+    var dateTime = new Date();
+    var hrs = dateTime.getHours();
+    var min = dateTime.getMinutes();
+    var sec = dateTime.getSeconds();
+     var session = document.getElementById("session");
+
+     ///////////////////////////////////////////
+
+     document.getElementById("hours").innerHTML= hrs;
+    document.getElementById("minutes").innerHTML =min;
+    document.getElementById("seconds").innerHTML = sec;
+    
+    ///////////////////////////////////////////////
+// var greet = document.getElementById("greeting");
+
+     if (hrs >= 12){
+        session.innerHTML ="PM";
+        
+    } else {
+        session.innerHTML="AM"
+    }
+    // week day 
+    let cm = document.getElementById('demo');
+
+// greetings message
+if (hrs >= 0 && hrs < 12){
+ document.getElementById("greetings").innerHTML="Good Morning Uncle Blessing";
+ document.body.style.backgroundColor="lightyellow"
+ document.body.style.backgroundImage="url(./img/morning.JPG)";
+ cm.innerHTML = "Today is " + day + " and its a beautiful day"
+   //document.getElementById("demo").style.color ="lightyellow"
+   
+}
+ else if(hrs >= 0 && hrs < 00){
+   document.getElementById("greetings").innerHTML="Its Midnight Uncle Blessing"
+   document.body.style.backgroundColor= "black"
+   document.body.style.backgroundImage="url(./img/mid-night.jpg)"
+   cm.innerHTML = "Today is " + day + " and its a beautiful day"
+   //document.getElementById("demo").style.color ="black"
+   
+}
+else if(hrs === 12){
+   document.getElementById("greetings").innerHTML="Its Noon Uncle Blessing";
+  document.body.style.backgroundColor = "skyblue";
+  cm.innerHTML = "Today is " + day + " and its a beautiful day"
+   // document.getElementById("demo").style.color ="skyblue"
+   
+}
+else if(hrs >= 12 && hrs <= 15){
+   document.getElementById("greetings").innerHTML="Good Afternoon Uncle Blessing";
+   
+   //document.body.style.backgroundColor="skyblue"
+   cm.innerHTML = "Today is " + day + " and its a beautiful day"
+  // document.getElementById("demo").style.color ="skyblue"
+   
+   document.body.style.backgroundColor="yellow"
+    document.body.style.backgroundColor="skyblue"
+   document.getElementById("greetings").style.color= "skyblue"
+   document.body.style.backgroundImage="url(./img/afternoon.JPG)";
+   
+}
+else{
+   document.getElementById("greetings").innerHTML="Good Evening Uncle Blessing";
+   document.body.style.backgroundColor="lightgrey";
+   document.getElementById("greetings").style.color ="grey";
+   document.body.style.backgroundImage="url(./img/yeg.JPG)";
+   cm.innerHTML = "Today is " + day + " hope you had beautiful day";
+    // document.getElementById("demo").style.color ="lightgrey"
+   
+}
+ if( hrs === 22 || hrs === 23){
+    document.getElementById("greetings").innerHTML="Good Night Uncle Blessing";
+    document.body.style.backgroundImage="url(./img/night.png)";
+    document.getElementById("greetings").style.color ="lightblue";
+    cm.innerHTML = "Today is " + day + " wishing you a good night rest";
+   // document.getElementById("demo").style.color ="lightblue"
+   
+    //document.body.style.backgroundImage="url(./img/mid-night.jpg)"
+}
+    if(hrs > 24){
+        hrs = hrs - 24 ;
+    }
+    
+
+}
+setInterval(displayTime,10)
+
+//
+
+
+  
+
+
+
+
+// day function
+
+const weekday = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+let d = new Date()
+let day = weekday [d.getDay()]
+console.log(day)
+  </script>  
+</body>
+</html>
